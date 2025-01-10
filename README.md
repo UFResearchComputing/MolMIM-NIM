@@ -100,8 +100,6 @@ For more examples, visit the [NVIDIA MolMIM Documentation](https://docs.nvidia.c
 
 ### Jupyter Notebooks
 
-Path to notebooks: `/data/ai/tutorial/nim/molmim`
-
 1. Set up a Conda environment:
    ```bash
    ml conda
@@ -142,6 +140,10 @@ Path to notebooks: `/data/ai/tutorial/nim/molmim`
 4. Satrt the JupyerLab server on Desktop:
    Open a new terminal and run the command:
    ```bash
+   conda activate molmim-nim
+   jupyter lab
+   ```
+   After launching JupyterLab, ensure you select the 'molmim-nim' kernel before running the notebooks.
    
 
 ---
