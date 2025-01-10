@@ -10,14 +10,12 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 - **Molecule Sampling**: Generate valid molecules from the latent space using an initial seed molecule.
 - **Novel Molecule Generation**: Generate small molecules with desired properties under specific constraints.
 
----
 
 ## Prerequisites
 
 - **Hardware**: Single NVIDIA GPU with at least 3GB of memory and compute capability >7.0.
 - **Storage**: At least 50GB of free hard drive space.
 
----
 
 ## Configuration on HPG
 
