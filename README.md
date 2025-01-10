@@ -47,7 +47,11 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 3. **Run Inference**  
    Obtain embeddings for a molecule using its SMILES string representation:
    ```bash
-   curl -X 'POST'        'http://localhost:8000/embedding'        -H 'accept: application/json'        -H 'Content-Type: application/json'        -d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}' > output.json
+   curl -X 'POST' \
+   'http://localhost:8000/embedding' \
+   -H 'accept: application/json' \
+   -H 'Content-Type: application/json' \
+   -d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}' > output.json
    ```
 
 4. **View the Outputs**  
@@ -58,6 +62,14 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
    For better readability, use [jq](https://jqlang.github.io/jq/):
    ```bash
    jq . output.json
+   ```
+   or you can pipe the output directly to jq as in the following command:
+   ```
+   curl -X 'POST' \
+    'http://localhost:8000/embedding' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}' > output.json
    ```
 
 ---
@@ -76,7 +88,12 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 
 Example command:
 ```bash
-curl -X 'POST'     -i     "http://localhost:8000/embedding"     -H 'accept: application/json'     -H 'Content-Type: application/json'     -d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}'
+curl -X 'POST' \
+-i  \
+"http://localhost:8000/embedding" \
+-H 'accept: application/json' \
+-H 'Content-Type: application/json' \
+-d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}'
 ```
 
 For more examples, visit the [NVIDIA MolMIM Documentation](https://docs.nvidia.com/nim/bionemo/molmim/latest/endpoints.html).
@@ -118,17 +135,28 @@ Path to notebooks: `/data/ai/tutorial/nim/molmim`
    ```bash
    nano ~/.local/share/jupyter/kernels/molmim-nim/run.sh
    ```
-   Add the following content:
+   Add the following content (do not forget change to your own dir):
    ```bash
    #!/usr/bin/bash
-   exec /blue/ufhpc/zhao.qian/conda/envs/molmim-nim/bin/python -m ipykernel "$@"
+   exec /blue/groupname/gatorlink/conda/envs/molmim-nim/bin/python -m ipykernel "$@" 
    ```
+
+4. Satrt the JupyerLab server on Desktop:
+   Open a new terminal and run the command:
+   ```bash
+   
 
 ---
 
 ## Stopping the NIM Service
 
 To stop the NIM service, simply close the terminal window.
+
+### Important Note
+It is recommended to **clean your cache files** every time you stop the server to ensure it won't affect your next run. You can do this by removing the cache directory:
+```bash
+rm -rf /blue/groupname/gatorlink/.cache/nim
+```
 
 ---
 
