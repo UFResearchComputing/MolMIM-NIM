@@ -20,8 +20,8 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 ## Configuration on HPG
 
 1. Go to [OOD](https://ood.rc.ufl.edu/) and launch the Hipergator Desktop.
-   ![Hipergator_Desktop_1](images/deaktop1.png)
-   ![Hipergator_Desktop_2](images/deaktop2.png)
+   ![Hipergator_Desktop_1](images/desktop1.png)
+   ![Hipergator_Desktop_2](images/desktop2.png)
 3. Start a terminal and run the following commands:
    ```bash
    mkdir -p /blue/groupname/gatorlink/.cache/nim  # Run only the first time
