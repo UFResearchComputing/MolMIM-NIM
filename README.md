@@ -142,7 +142,8 @@ For more examples, visit the [NVIDIA MolMIM Documentation](https://docs.nvidia.c
    exec /blue/groupname/gatorlink/conda/envs/molmim-nim/bin/python -m ipykernel "$@" 
    ```
 
-4. Satrt the JupyerLab server on Desktop:
+4. Satrt the JupyerLab server on Desktop
+   
    Open a new terminal and run the command:
    ```bash
    conda activate molmim-nim
