@@ -21,7 +21,7 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 
 1. Go to [OOD](https://ood.rc.ufl.edu/) and launch the Hipergator Desktop.
    <p align="center">
-  <img src="images/desktop1.png" alt="Hipergator_Desktop_1" width="300">
+  <img src="images/desktop1.png" alt="Hipergator_Desktop_1" width="300" style="margin-right: 10px;">
   <img src="images/desktop2.png" alt="Hipergator_Desktop_2" width="300">
   </p>
    
