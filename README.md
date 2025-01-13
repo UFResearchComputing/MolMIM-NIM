@@ -17,14 +17,16 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 - **Storage**: At least 50GB of free hard drive space.
 
 
-## Configuration on HPG
+## Launch MolMIM NIM on HPG
 
 1. Go to [OOD](https://ood.rc.ufl.edu/) and launch the Hipergator Desktop.
   <p align="center">
   <img src="images/desktop1.png" alt="Hipergator_Desktop_1" height="350" style="margin-right: 50px;">
   <img src="images/desktop2.png" alt="Hipergator_Desktop_2" height="350">
   </p>
-   
+
+  **Note**: Remember to update the SLURM account and QoS to match your group, and adjust the job time accordingly. 
+  
 2. Start a terminal and run the following commands:
    ```bash
    mkdir -p /blue/groupname/gatorlink/.cache/nim  # Run only the first time
@@ -46,8 +48,12 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
    ```bash
    curl -X 'GET' 'http://localhost:8000/v1/health/ready' -H 'accept: application/json'
    ```
-
-3. **Run Inference**  
+3. **Navigate to your DESIRED job running directory**
+   ```bash
+   cd /blue/groupname/gatorlink/...
+   ```
+   
+4. **Run Inference**  
    Obtain embeddings for a molecule using its SMILES string representation:
    ```bash
    curl -X 'POST' \
@@ -57,7 +63,7 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
    -d '{"sequences": ["CC(Cc1ccc(cc1)C(C(=O)O)C)C"]}' > output.json
    ```
 
-4. **View the Outputs**  
+5. **View the Outputs**  
    Print the output to the terminal:
    ```bash
    cat output.json
@@ -163,6 +169,19 @@ It is recommended to **clean your cache files** every time you stop the server t
 ```bash
 rm -rf /blue/groupname/gatorlink/.cache/nim/*
 ```
+
+---
+
+## Another way to run MolMIM NIM on HPG
+
+1. **Submit a SLURM batch job**  
+   Use `sbatch` to start the NIM server with GPU resources, and record the name of the node where the server is running.
+
+2. **Open a terminal or Jupyter session**  
+   Start an SSH terminal or a Jupyter session using any preferred method (e.g., Open OnDemand, `srun`, etc.), with minimal resource allocation (no GPU required) to run inference.
+
+3. **Run on the same node**  
+   Ensure that the SSH terminal or Jupyter session for inference runs on the same node as the server.
 
 ---
 
