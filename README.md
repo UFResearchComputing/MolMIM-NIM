@@ -73,7 +73,7 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
    jq . output.json
    ```
    or you can pipe the output directly to jq as in the following command:
-   ```
+   ```bash
    curl -X 'POST' \
     'http://localhost:8000/embedding' \
     -H 'accept: application/json' \
