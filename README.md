@@ -84,6 +84,17 @@ MolMIM is a state-of-the-art generative model for small molecule drug developmen
 ---
 
 ## Endpoints Usage
+MolMIM provides the following endpoints and associated functions:
+
+- `/embedding` - Retrieve the embeddings from MolMIM for a given input molecule.
+
+- `/hidden` - Retrieve the hidden state from MolMIM for a given input molecule (shown as the “latent code” in Figure 1 of the MolMIM manuscript).
+
+- `/decode` - Decode a hidden state representation into a SMILES string sequence.
+
+- `/sampling` - Sample the latent space within a given scaled radius from a seed molecule. This method generates new molecule samples from the given input in an unguided fashion.
+
+- `/generate` - Generate novel molecules (optionally while optimizing against a certain property). This method generates new optimized molecules if CMA-ES-guided sampling is enabled.
 
 ### Bash
 
