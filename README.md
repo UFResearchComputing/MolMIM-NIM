@@ -128,7 +128,7 @@ For more examples, visit the [NVIDIA MolMIM Documentation](https://docs.nvidia.c
    conda create -n molmim-nim python=3.12
    conda activate molmim-nim
    conda install requests pandas numpy seaborn matplotlib rdkit -c conda-forge
-   mamba install jupyterlab
+   conda install jupyterlab
    conda install ipykernel
    ```
 2. Configure the Jupyter kernel:
